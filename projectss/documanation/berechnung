@@ -1,0 +1,36 @@
+
+
+Event Listener
+Der Event Listener wird auf das formular mit der ID 'pageOne' gesezt, um die berechnung zu Starten, wenn das formular abgeschickt wird. Dabei wird die Standardaktion des Formulars verhindert (event.preventDefault()), um die berecnung zu ermöglichen, ohne die Seite neu zu laden.
+
+Hauptfunktion zur Berechnung der Energieproduktion
+async function calculateEnergy() {
+    // eingabeparameter aus dem formular abrufen und in geeignete Datentypen umwandeln
+
+        // Koordinaten des Standorts abrufen
+        const coords = await getCoordinatesFromAddress(country, city, postcode);
+        // Wetterdaten für den Standort abrufen
+
+        // Berechnung der täglichen Sonnenstunden basierend auf der Wolkenbedeckung
+
+        // Berechnung der Energieproduktion
+        // Ergebnis anzeigen
+
+
+Koordinatenermittlung
+Die Funktion getCoordinatesFromAddress verwendet die OpenCage API, um die geografischen Koordinaten (Breitengrad und Längengrad) basierend auf der eingegebenen Adresse zu ermitteln.
+
+Abrufen der Wetterdaten
+Die Funktion fetchWeatherData verwendet die OpenWeatherMap API, um die Wetterdaten (Temperatur und Wolkenbedeckung) für die ermittelten Koordinaten abzurufen.
+
+Berechnung der PV-Produktion
+Die Funktion berechnePVProduktion berechnet die erwartete Energieproduktion basierend auf verschiedenen Faktoren wie Modulfäche, Wirkungsgrad, globaler Strahlung, Performance Ratio, Effizienz des Wechselrichters, täglichen Sonnenstunden, Temperatur, Temperaturkoeffizient, Dachneigung, Ausrichtung und Verschattung.
+
+Berechnungslogik
+1. TemperaturabhängigerwWirkungsgrad: Der wirkungsgrad wird basierend auf der Temperatur angepasst.
+2. Gesamtwirkungsgrad: berechnung des Gesamtwirkungsgrads unter Berücksichtigung des Wirkungsgrads des PV-Moduls, des Einflusses der Temperatur und der Effizienz des Wechselrichters.
+3. Neigungs- und Ausrichtungsfaktoren: Berücksichtigung der Dachneigung und Ausrichtung der PV-Module.
+4. Angepasste Globalstrahlung: Anpassung der globalen Strahlung basierend auf Neigungs- und Ausrichtungsfaktoren.
+5. Verschattungsfaktor: Berücksichtigung der verschattung.
+6. Energieproduktion: Endgültige berechnung der Energieproduktion basierend aufallen oben genannten Faktoren.
+

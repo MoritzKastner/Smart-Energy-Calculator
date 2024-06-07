@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>PV-Anmeldung</title>
+    <!-- Bootstrap CSS von CDN -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<div class="container-hintergrunde" id="predictionSection" style="background-image: url('/img/hintergrund.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 700px; overflow: auto;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1>Energieproduktion Vorhersage</h1>
+                <form id="predictionForm">
+                    <div class="form-group">
+                        <label for="moduleArea">Fläche der Solarmodule (m²):</label>
+                        <input type="number" class="form-control" id="moduleArea" name="moduleArea" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zipecode">Postleitzahl:</label>
+                        <input type="number" class="form-control" id="zipecode" name="zipecode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="efficiency">Wirkungsgrad der Solarmodule (%):</label>
+                        <input type="number" class="form-control" id="efficiency" name="efficiency" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="irradiance">Globalstrahlung auf geneigte Fläche (kWh/m²):</label>
+                        <input type="number" class="form-control" id="irradiance" name="irradiance" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pr">Performance Ratio:</label>
+                        <input type="number" class="form-control" id="pr" name="pr" step="0.01" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="calculateEnergy()">Berechnen</button>
+                </form>
+                <h2 id="result">Erwartete Energieproduktion: </h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-hintergrunde" style="background-image: url('/img/hintergrund.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 700px; overflow: auto;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="mb-4">Anmeldung Ihrer Photovoltaikanlage</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="maxLeistung">Max. Leistung in kWh:</label>
+                        <input type="number" class="form-control" id="maxLeistung" name="maxLeistung" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="wechselrichter">Geben Sie die Daten Ihres Wechselrichters an:</label>
+                        <input type="text" class="form-control" id="wechselrichter" name="wechselrichter">
+                    </div>
+                    <div class="form-group">
+                        <label for="ausrichtung">Ausrichtung:</label>
+                        <select class="form-control" id="ausrichtung" name="ausrichtung">
+                            <option>Norden</option>
+                            <option>Süden</option>
+                            <option>Osten</option>
+                            <option>Westen</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="neigung">Geben Sie die Daten Ihres Modulfelds an (Neigung):</label>
+                        <select class="form-control" id="neigung" name="neigung">
+                            <option>Flachdach (0°)</option>
+                            <option>Leichte Neigung (15°)</option>
+                            <option>Normales Dach (35°)</option>
+                            <option>Steildach (45°)</option>
+                            <option>Hauswand (90°)</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-secondary">Zurück</button>
+                    <button type="submit" class="btn btn-primary">Weiter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/navigiren.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/berechnung.js"></script>
+</body>
+</html>

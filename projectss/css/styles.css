@@ -1,0 +1,68 @@
+
+.container-hintergrunde{
+    background-image: url("../img/hintergrund.jpg");
+    background-size: cover;
+    background-position: center;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 30px ;
+
+
+
+
+}
+.container{
+    background-color: white;
+    margin-top: 100px;
+
+}
+
+/* In your CSS file */
+body {
+
+
+
+}
+
+
+
+
+label {
+    /*display: block;*/
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.checkbox-panel .checkbox-group {
+    /*border: 20px solid #ccc; /* Rahmen um die gesamte Gruppe */
+    padding: 10px;
+    border-radius: 5px; /* Abgerundete Ecken */
+}
+
+.draggable {
+    cursor: move;
+}
+
+.table td {
+    height: 80px;
+    width: 3000px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.remove-button {
+    cursor: pointer;
+    color: white;
+    padding: 0.2em 0.4em;
+    font-size: 1em;
+}
+.info-icon {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.price-up {
+    color: green;
+}
+.price-down {
+    color: red;
+}

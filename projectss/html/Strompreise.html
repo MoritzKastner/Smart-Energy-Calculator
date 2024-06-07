@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Strompreise</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0"></script>
+</head>
+<body>
+<div class="container-hintergrunde" id="preisepage" style="background-image: url('/img/hintergrund.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 700px; overflow: auto;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1>Strompreise</h1>
+                <h2>Aktuelle Strompreise</h2>
+                <canvas id="priceChart" width="400" height="200"></canvas>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Startzeit</th>
+                        <th>Endzeit</th>
+                        <th>Preis (€/MWh)</th>
+                        <th>Veränderung</th>
+                    </tr>
+                    </thead>
+                    <tbody id="prices"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/strompreise.js"></script>
+
+</body>
+</html>

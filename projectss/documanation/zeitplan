@@ -1,0 +1,39 @@
+
+JavaScript Code zur Verwaltung eines Drag-and-Drop-basierten Zeitplans
+
+Der gegebene JavaScript-Code dient zur Verwaltung eines Zeitplans, bei dem Aktivitäten per Drag-and-Drop in verschiedene Zellen einer Tabelle verschoben werden können. Es gibt auch die Möglichkeit, neue Aktivitäten hinzuzufügen und den Zeitplan im lokalen Speicher zu speichern und wiederherzustellen. Hier ist eine detaillierte Erklärung zu den einzelnen Teilen des Codes:
+
+DOMContentLoaded Event Listener
+Der Event Listener sorgt dafür, dass die nachfolgenden Funktionen ausgeführt werden, sobald das DOM vollständig geladen ist.
+
+
+
+Drag-and-Drop Event Handler
+Die folgenden Funktionen handhaben das Drag-and-Drop-Verhalten der Aktivitäten.
+
+function handleDragStart(e) {
+
+
+function handleDrop(e) {
+
+
+Funktion zum Hinzufügen eines Entfernen-Buttons
+Die Funktion addRemoveButton fügt jedem Element einen Button hinzu, um es aus der Tabelle zu entfernen.
+
+function addRemoveButton(element) {
+
+Funktionen zum Speichern und Laden des Zeitplans
+Die Funktionen saveSchedule und loadSchedule speichern den Zeitplan im lokalen Speicher des Browsers und laden ihn bei Bedarf.
+
+function saveSchedule() {
+
+
+function loadSchedule() {
+
+
+Funktion zum Hinzufügen neuer Aktivitäten
+Die Funktion addNewActivity ermöglicht es dem Benutzer, neue Aktivitäten hinzuzufügen.
+
+
+
+Der Code ist gut strukturiert und modularisiert, sodass jeder Teil für sich alleine verständlich und testbar ist. Die Verwendung des lokalen Speichers zum Speichern und Wiederherstellen des Zeitplans und die Möglichkeit, neue Aktivitäten hinzuzufügen, sind besonders hervorzuheben.

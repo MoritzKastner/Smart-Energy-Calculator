@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Informationen über Ihren Haushalt</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container-hintergrunde" style="background-image: url('/img/hintergrund.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; overflow: auto;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1>Um optimale Empfehlungen zu geben benötigen wir als Letztes noch Informationen über Ihren Haushalt</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="grundverbrauch">Täglicher Grundstromverbrauch</label>
+                        <input type="number" class="form-control" id="grundverbrauch" placeholder="kWh">
+                    </div>
+                    <div class="form-group checkbox-panel">
+                        <label>Welche Elektrogeräte können Sie zeitsteuern? (optional)</label>
+                        <div class="checkbox-group d-flex flex-wrap justify-content-start">
+                            <div class="form-check col-md-3">
+                                <input class="form-check-input" type="checkbox" id="waschmaschine" name="appliance">
+                                <label class="form-check-label" for="waschmaschine">Waschmaschine</label>
+                            </div>
+                            <div class="form-check col-md-3">
+                                <input class="form-check-input" type="checkbox" id="geschirrspueler" name="appliance">
+                                <label class="form-check-label" for="geschirrspueler">Geschirrspüler</label>
+                            </div>
+                            <div class="form-check col-md-3">
+                                <input class="form-check-input" type="checkbox" id="boiler" name="appliance">
+                                <label class="form-check-label" for="boiler">Boiler</label>
+                            </div>
+                            <div class="form-check col-md-3">
+                                <input class="form-check-input" type="checkbox" id="jalousien" name="appliance">
+                                <label class="form-check-label" for="jalousien">Jalousien</label>
+                            </div>
+                            <div class="form-check col-md-3">
+                                <input class="form-check-input" type="checkbox" id="heizung" name="appliance">
+                                <label class="form-check-label" for="heizung">Heizung/Kühlung</label>
+                            </div>
+                            <div class="form-check col-md-3">
+                                <input class="form-check-input" type="checkbox" id="trockner" name="appliance">
+                                <label class="form-check-label" for="trockner">Trockner</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Besitzen Sie eine Klimaanlage?</label>
+                        <div>
+                            <input type="radio" id="klimaJa" name="klimaanlage" value="Ja">
+                            <label for="klimaJa">Ja</label>
+                            <input type="radio" id="klimaNein" name="klimaanlage" value="Nein">
+                            <label for="klimaNein">Nein</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Besitzen Sie ein Elektroauto?</label>
+                        <div>
+                            <input type="radio" id="autoJa" name="elektroauto" value="Ja">
+                            <label for="autoJa">Ja</label>
+                            <input type="radio" id="autoNein" name="elektroauto" value="Nein">
+                            <label for="autoNein">Nein</label>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Abschließen</button>
+                        <button type="button" class="btn btn-secondary">Zurück</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/bootstrap.js"></script>
+</body>
+</html>

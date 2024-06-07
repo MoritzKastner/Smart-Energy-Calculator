@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Zeitplan für Photovoltaikanlage</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<div class="container-hintergrunde" id="pageThree" style="background-image: url('/img/hintergrund.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; overflow: auto;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="mb-4">Um optimale Empfehlungen zu geben benötigen wir als Letztes noch Informationen über Ihren Zeitplan</h1>
+                <p>Markieren Sie durch Verschieben der Kacheln, wann Sie üblicherweise Ihre Hausarbeit erledigen</p>
+                <div class="mb-3">
+                    <button class="btn btn-info draggable" draggable="true" id="autoLaden">Auto laden</button>
+                    <button class="btn btn-info draggable" draggable="true" id="waescheWaschen">Wäsche waschen</button>
+                    <button class="btn btn-info draggable" draggable="true" id="geschirrSpuelen">Geschirr spülen</button>
+                    <button class="btn btn-info draggable" draggable="true" id="nichtZuhause">nicht Zuhause</button>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="newActivityInput" placeholder="Neue Aktivität">
+                    <button class="btn btn-outline-secondary" id="addActivityButton">Hinzufügen</button>
+                </div>
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Zeit</th>
+                        <th>MO</th>
+                        <th>DI</th>
+                        <th>MI</th>
+                        <th>DO</th>
+                        <th>FR</th>
+                        <th>SA</th>
+                        <th>SO</th>
+                    </tr>
+                    </thead>
+                    <tbody id="scheduleTable">
+                    <tr><td>06:00</td><td id="mo-06"></td><td id="di-06"></td><td id="mi-06"></td><td id="do-06"></td><td id="fr-06"></td><td id="sa-06"></td><td id="so-06"></td></tr>
+                    <tr><td>07:00</td><td id="mo-07"></td><td id="di-07"></td><td id="mi-07"></td><td id="do-07"></td><td id="fr-07"></td><td id="sa-07"></td><td id="so-07"></td></tr>
+                    <tr><td>08:00</td><td id="mo-08"></td><td id="di-08"></td><td id="mi-08"></td><td id="do-08"></td><td id="fr-08"></td><td id="sa-08"></td><td id="so-08"></td></tr>
+                    <tr><td>09:00</td><td id="mo-09"></td><td id="di-09"></td><td id="mi-09"></td><td id="do-09"></td><td id="fr-09"></td><td id="sa-09"></td><td id="so-09"></td></tr>
+                    <tr><td>10:00</td><td id="mo-10"></td><td id="di-10"></td><td id="mi-10"></td><td id="do-10"></td><td id="fr-10"></td><td id="sa-10"></td><td id="so-10"></td></tr>
+                    <tr><td>11:00</td><td id="mo-11"></td><td id="di-11"></td><td id="mi-11"></td><td id="do-11"></td><td id="fr-11"></td><td id="sa-11"></td><td id="so-11"></td></tr>
+                    <tr><td>12:00</td><td id="mo-12"></td><td id="di-12"></td><td id="mi-12"></td><td id="do-12"></td><td id="fr-12"></td><td id="sa-12"></td><td id="so-12"></td></tr>
+                    <tr><td>13:00</td><td id="mo-13"></td><td id="di-13"></td><td id="mi-13"></td><td id="do-13"></td><td id="fr-13"></td><td id="sa-13"></td><td id="so-13"></td></tr>
+                    <tr><td>14:00</td><td id="mo-14"></td><td id="di-14"></td><td id="mi-14"></td><td id="do-14"></td><td id="fr-14"></td><td id="sa-14"></td><td id="so-14"></td></tr>
+                    <tr><td>15:00</td><td id="mo-15"></td><td id="di-15"></td><td id="mi-15"></td><td id="do-15"></td><td id="fr-15"></td><td id="sa-15"></td><td id="so-15"></td></tr>
+                    <tr><td>16:00</td><td id="mo-16"></td><td id="di-16"></td><td id="mi-16"></td><td id="do-16"></td><td id="fr-16"></td><td id="sa-16"></td><td id="so-16"></td></tr>
+                    <tr><td>17:00</td><td id="mo-17"></td><td id="di-17"></td><td id="mi-17"></td><td id="do-17"></td><td id="fr-17"></td><td id="sa-17"></td><td id="so-17"></td></tr>
+                    <tr><td>18:00</td><td id="mo-18"></td><td id="di-18"></td><td id="mi-18"></td><td id="do-18"></td><td id="fr-18"></td><td id="sa-18"></td><td id="so-18"></td></tr>
+                    <tr><td>19:00</td><td id="mo-19"></td><td id="di-19"></td><td id="mi-19"></td><td id="do-19"></td><td id="fr-19"></td><td id="sa-19"></td><td id="so-19"></td></tr>
+                    <tr><td>20:00</td><td id="mo-20"></td><td id="di-20"></td><td id="mi-20"></td><td id="do-20"></td><td id="fr-20"></td><td id="sa-20"></td><td id="so-20"></td></tr>
+                    <tr><td>21:00</td><td id="mo-21"></td><td id="di-21"></td><td id="mi-21"></td><td id="do-21"></td><td id="fr-21"></td><td id="sa-21"></td><td id="so-21"></td></tr>
+                    <tr><td>22:00</td><td id="mo-22"></td><td id="di-22"></td><td id="mi-22"></td><td id="do-22"></td><td id="fr-22"></td><td id="sa-22"></td><td id="so-22"></td></tr>
+                    <tr><td>23:00</td><td id="mo-23"></td><td id="di-23"></td><td id="mi-23"></td><td id="do-23"></td><td id="fr-23"></td><td id="sa-23"></td><td id="so-23"></td></tr>
+                    <tr><td>24:00</td><td id="mo-24"></td><td id="di-24"></td><td id="mi-24"></td><td id="do-24"></td><td id="fr-24"></td><td id="sa-24"></td><td id="so-24"></td></tr>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <button class="btn btn-secondary">Zurück</button>
+                    <button class="btn btn-primary" onclick="saveSchedule()">Weiter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/zeitplan.js"></script>
+</body>
+</html>
