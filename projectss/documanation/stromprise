@@ -3,7 +3,7 @@ JavaScript Code zur Anzeige von Strompreisen und Erstellung eines Diagramms
 
 Der gegebene JavaScript-Code dient zum Abrufen von Strompreisdaten von einer API, zur Anzeige der Daten in einer Tabelle und zur Erstellung eines Liniendiagramms. Hier ist eine detaillierte Erklärung zu den einzelnen Teilen des Codes:
 
-
+ABC Test Test
 
 displayPrices Funktion
 Die Funktion displayPrices zeigt die Strompreisdaten in einer HTML-Tabelle an.
