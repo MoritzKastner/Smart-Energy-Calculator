@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/projectss/css/styles.css">
     <link rel="stylesheet" href="/projectss/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header class="header">
@@ -30,16 +30,21 @@
         <div class="content-box">
            
             <h2>PV- Ertrag</h2>
-            <p>Hier wird die Stromerzeugung durch die PV- Anlage über den Tag dargestellt.</p>
+            <p>Hier wird die Stromerzeugung durch Ihre PV- Anlage über den Tag dargestellt.</p>
+            <canvas id="pvErtragChart"></canvas>
         </div>
         <div class="content-box">
             
             <h2>Empfehlungen</h2>
-            <p>Hier bekommen die User Tipps zur Schaltung der Haushaltsgeräte.</p>
+            <p>Hier bekommen Sie Tipps zur Schaltung Ihrer Haushaltsgeräte.</p>
+            <ul id="recommendations">
+                <li>Waschen Sie Ihre Wäsche von 13 bis 15 Uhr.</li>
+                <!--Nur Platzhalter, hier werden die Handlungsempfehlungen eingefügt-->
+            </ul>
         </div>
 
     </div>
     </div>
-   
+    <script src="/projectss/js/dashboard.js"></script>
 </body>
 </html>
