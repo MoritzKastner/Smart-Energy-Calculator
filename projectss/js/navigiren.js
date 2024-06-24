@@ -36,3 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('pageThree').style.display = 'none';
     document.getElementById('pageFour').style.display = 'none';
 });
+
+//Verlinkung zur Dashboard Page nach Abschließen des Anmeldevorgangs
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("pageFour4").addEventListener("click", function() {
+        window.location.href = "/projectss/html/Dashboard.html"; 
+    });
+});

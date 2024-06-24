@@ -1,0 +1,102 @@
+/* Container background image */
+.container-hintergrunde {
+    background-image: url("../img/hintergrund.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Inner container styling */
+.container {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Text box label styling */
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Checkbox panel and group styling */
+.checkbox-panel .checkbox-group {
+    padding: 10px;
+    border-radius: 5px; 
+}
+
+/* Draggable item cursor */
+.draggable {
+    cursor: move;
+}
+
+/* Table cells styling */
+.table td {
+    height: 80px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Button styling */
+.remove-button {
+    cursor: pointer;
+    color: white;
+    padding: 0.2em 0.4em;
+    font-size: 1em;
+}
+
+/* Info icon styling */
+.info-icon {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Price change indicator styling */
+.price-up {
+    color: green;
+}
+
+.price-down {
+    color: red;
+}
+
+
+form .form-group {
+    margin-bottom: 15px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.checkbox-group .form-check {
+    margin-bottom: 10px;
+}
