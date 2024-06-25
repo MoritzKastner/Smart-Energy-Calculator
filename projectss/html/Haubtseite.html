@@ -15,6 +15,7 @@
             <div class="col-md-8">
                 <h1>Energieproduktion Vorhersage</h1>
                 <form id="predictionForm">
+                    <!--User Eingabe der Fläche der Solarmodule-->
                     <div class="form-group">
                         <label for="moduleArea">Fläche der Solarmodule (m²): <i class="info-icon" data-toggle="tooltip" title="Die Fläche der installierten Solarmodule in Quadratmetern. Beispiel: 20 m².">i</i></label>
                         <input type="number" class="form-control" id="moduleArea" name="moduleArea" value="20" required>
@@ -31,6 +32,12 @@
                         <label for="zipecode">Postleitzahl: <i class="info-icon" data-toggle="tooltip" title="Die Postleitzahl der Installationsadresse. Beispiel: 10115.">i</i></label>
                         <input type="text" class="form-control" id="zipecode" name="zipecode" value="4010" required>
                     </div>
+                    <!--User Eingabe der Nennleistung der Anlage-->
+                    <div class="form-group">
+                        <label for="moduleArea">Nennleistung der Anlage: <i class="info-icon" data-toggle="tooltip" title="Die Nennleistung der installierten Solarmodule in Kilowattpeak. Beispiel: 5 kWp.">i</i></label>
+                        <input type="number" class="form-control" id="ratedPower" name="ratedPower" value="5" required>
+                    </div>
+                    <!--Wirkungsgrad der Anlage-->
                     <div class="form-group">
                         <label for="efficiency">Wirkungsgrad der Solarmodule (%): <i class="info-icon" data-toggle="tooltip" title="Der Wirkungsgrad der Solarmodule in Prozent. Typische Werte liegen zwischen 15% und 20%. Beispiel: 18%.">i</i></label>
                         <input type="number" class="form-control" id="efficiency" name="efficiency" step="0.01" value="18" required>
@@ -51,6 +58,7 @@
                         <label for="temperatureCoefficient">Temperaturkoeffizient (%/°C): <i class="info-icon" data-toggle="tooltip" title="Der Temperaturkoeffizient gibt an, wie stark der Wirkungsgrad der Module mit steigender Temperatur abnimmt. Typische Werte liegen zwischen -0.3% und -0.5% pro Grad Celsius. Beispiel: -0.4%.">i</i></label>
                         <input type="number" class="form-control" id="temperatureCoefficient" name="temperatureCoefficient" step="0.01" value="-0.4" required>
                     </div>
+                    <!--Neigungswinkel der Anlage-->
                     <div class="form-group">
                         <label for="roofTilt">Neigung des Dachs (°): <i class="info-icon" data-toggle="tooltip" title="Der Neigungswinkel der Solarmodule. Beispiel: 30° für ein typisches Dach.">i</i></label>
                         <select class="form-control" id="roofTilt" name="roofTilt" required>
@@ -60,6 +68,7 @@
                             <option value="45">Steildach (45°)</option>
                         </select>
                     </div>
+                    <!--Ausrichtung der Anlage-->
                     <div class="form-group">
                         <label for="orientation">Ausrichtung der Module (°): <i class="info-icon" data-toggle="tooltip" title="Die Ausrichtung der Solarmodule in Grad. Süden entspricht 180°. Beispiel: 180° für optimale Ausrichtung.">i</i></label>
                         <select class="form-control" id="orientation" name="orientation" required>
