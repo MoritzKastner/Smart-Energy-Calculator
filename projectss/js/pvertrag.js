@@ -1,6 +1,10 @@
 // Hier soll der stündliche Ertrag berechnet werden, interagiert mit der mockData im dashboard.js und soll den PV- Ertrag für jede Stunde hineinspeichern
-
-
+// Userdaten über die Anlage
+const nennleistung = parseFloat(document.getElementById('ratedPower').value);
+const modulflaeche = parseFloat(document.getElementById('moduleArea').value);;
+const wirkungsgrad = parseFloat(document.getElementById('efficiency').value);
+const neigungswinkel= parseFloat(document.getElementById('roofTilt').value);
+const ausrichtung= parseFloat(document.getElementById('orientation').value);
 
 // Daten, die die API liefern soll 
 const globalstrahlung = 800; // W/m², Global Horizontal Irradiance (GHI)
@@ -31,7 +35,7 @@ function berechneErtragStunde(nennleistung, modulflaeche, wirkungsgrad, neigungs
 
 // Funktion zur Berechnung und Speicherung des stündlichen Ertrags in mockData
 function calculateHourlyYield() {
-    // Userdaten über die Anlage
+    // Benutzerwerte abrufen
     const nennleistung = parseFloat(document.getElementById('ratedPower').value);
     const modulflaeche = parseFloat(document.getElementById('moduleArea').value);
     const wirkungsgrad = parseFloat(document.getElementById('efficiency').value);
@@ -41,6 +45,6 @@ function calculateHourlyYield() {
     // Berechnung für jede Stunde
     weatherData.forEach(data => {
       const ertrag = berechneErtragStunde(nennleistung, modulflaeche, wirkungsgrad, neigungswinkel, ausrichtung, data.globalstrahlung, data.direkteStrahlung, data.diffuseStrahlung, data.temperatur);
-      Data.push({ hour: data.hour, ertrag: ertrag });
+      mockData.push({ hour: data.hour, ertrag: ertrag });
     });
 }//calculateHourlyYield
