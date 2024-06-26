@@ -14,74 +14,104 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h1>Energieproduktion Vorhersage</h1>
+                <h1>Anmeldung</h1>
+                <br>
                 <form id="predictionForm">
-                    <!--User Eingabe der Fläche der Solarmodule-->
-                    <div class="form-group">
-                        <label for="moduleArea">Fläche der Solarmodule (m²): <i class="info-icon" data-toggle="tooltip" title="Die Fläche der installierten Solarmodule in Quadratmetern. Beispiel: 20 m².">i</i></label>
-                        <input type="number" class="form-control" id="moduleArea" name="moduleArea" value="20" required>
+                    <h3>Persönliche Daten</h3>
+
+                    <!-- Unit 1: Land, Stadt, Postleitzahl -->
+                    <div class="form-unit">
+                        <div class="form-group">
+                            <label for="username">Name/Vorname: <i class="info-icon" data-toggle="tooltip" title="Ihr Name und Ihr Vorname">i</i></label>
+                            <input type="text" class="form-control" id="username" name="country" value="Max Mustermann" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail Adresse: <i class="info-icon" data-toggle="tooltip" title="Ihre E-mail Adresse">i</i></label>
+                            <input type="text" class="form-control" id="email" name="country" value="max.mustermann@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Land: <i class="info-icon" data-toggle="tooltip" title="Das Land, in dem die Solaranlage installiert ist.">i</i></label>
+                            <input type="text" class="form-control" id="country" name="country" value="Österreich" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Stadt: <i class="info-icon" data-toggle="tooltip" title="Die Stadt, in der die Solaranlage installiert ist.">i</i></label>
+                            <input type="text" class="form-control" id="city" name="city" value="Linz" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipecode">Postleitzahl: <i class="info-icon" data-toggle="tooltip" title="Die Postleitzahl der Installationsadresse. Beispiel: 10115.">i</i></label>
+                            <input type="text" class="form-control" id="zipecode" name="zipecode" value="4010" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="country">Land: <i class="info-icon" data-toggle="tooltip" title="Das Land, in dem die Solaranlage installiert ist.">i</i></label>
-                        <input type="text" class="form-control" id="country" name="country" value="Österreich" required>
+
+                    <hr>
+
+                    <!-- Unit 2: Nennleistung, Fläche, Wirkungsgrad -->
+                    <h3>Die Daten Ihrer Solar- Anlage</h3>
+
+                    <div class="form-unit">
+                        <div class="form-group">
+                            <label for="ratedPower">Nennleistung der Anlage: <i class="info-icon" data-toggle="tooltip" title="Die Nennleistung der installierten Solarmodule in Kilowattpeak. Beispiel: 5 kWp.">i</i></label>
+                            <input type="number" class="form-control" id="ratedPower" name="ratedPower" value="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="moduleArea">Fläche der Solarmodule (m²): <i class="info-icon" data-toggle="tooltip" title="Die Fläche der installierten Solarmodule in Quadratmetern. Beispiel: 20 m².">i</i></label>
+                            <input type="number" class="form-control" id="moduleArea" name="moduleArea" value="20" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="efficiency">Wirkungsgrad der Solarmodule (%): <i class="info-icon" data-toggle="tooltip" title="Der Wirkungsgrad der Solarmodule in Prozent. Typische Werte liegen zwischen 15% und 20%. Beispiel: 18%.">i</i></label>
+                            <input type="number" class="form-control" id="efficiency" name="efficiency" step="0.01" value="18" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inverterEfficiency">Wirkungsgrad des Wechselrichters (%): <i class="info-icon" data-toggle="tooltip" title="Der Wirkungsgrad des Wechselrichters in Prozent. Typische Werte liegen zwischen 95% und 98%. Beispiel: 96%.">i</i></label>
+                            <input type="number" class="form-control" id="inverterEfficiency" name="inverterEfficiency" step="0.01" value="96" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="city">Stadt: <i class="info-icon" data-toggle="tooltip" title="Die Stadt, in der die Solaranlage installiert ist.">i</i></label>
-                        <input type="text" class="form-control" id="city" name="city" value="Linz" required>
+
+                    <hr>
+
+                    <!-- Unit 3: Globalstrahlung, Performance Ratio -->
+                    <div class="form-unit">
+                        <div class="form-group">
+                            <label for="irradiance">Globalstrahlung auf geneigte Fläche (kWh/m²): <i class="info-icon" data-toggle="tooltip" title="Die durchschnittliche tägliche Sonneneinstrahlung auf die Module in kWh/m². Typische Werte liegen zwischen 3 und 5 kWh/m². Beispiel: 4 kWh/m².">i</i></label>
+                            <input type="number" class="form-control" id="irradiance" name="irradiance" value="4" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pr">Performance Ratio: <i class="info-icon" data-toggle="tooltip" title="Das Performance Ratio (PR) berücksichtigt Systemverluste und liegt typischerweise zwischen 0.75 und 0.85. Beispiel: 0.8.">i</i></label>
+                            <input type="number" class="form-control" id="pr" name="pr" step="0.01" value="0.8" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="temperatureCoefficient">Temperaturkoeffizient (%/°C): <i class="info-icon" data-toggle="tooltip" title="Der Temperaturkoeffizient gibt an, wie stark der Wirkungsgrad der Module mit steigender Temperatur abnimmt. Typische Werte liegen zwischen -0.3% und -0.5% pro Grad Celsius. Beispiel: -0.4%.">i</i></label>
+                            <input type="number" class="form-control" id="temperatureCoefficient" name="temperatureCoefficient" step="0.01" value="-0.4" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="zipecode">Postleitzahl: <i class="info-icon" data-toggle="tooltip" title="Die Postleitzahl der Installationsadresse. Beispiel: 10115.">i</i></label>
-                        <input type="text" class="form-control" id="zipecode" name="zipecode" value="4010" required>
-                    </div>
-                    <!--User Eingabe der Nennleistung der Anlage-->
-                    <div class="form-group">
-                        <label for="moduleArea">Nennleistung der Anlage: <i class="info-icon" data-toggle="tooltip" title="Die Nennleistung der installierten Solarmodule in Kilowattpeak. Beispiel: 5 kWp.">i</i></label>
-                        <input type="number" class="form-control" id="ratedPower" name="ratedPower" value="5" required>
-                    </div>
-                    <!--Wirkungsgrad der Anlage-->
-                    <div class="form-group">
-                        <label for="efficiency">Wirkungsgrad der Solarmodule (%): <i class="info-icon" data-toggle="tooltip" title="Der Wirkungsgrad der Solarmodule in Prozent. Typische Werte liegen zwischen 15% und 20%. Beispiel: 18%.">i</i></label>
-                        <input type="number" class="form-control" id="efficiency" name="efficiency" step="0.01" value="18" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inverterEfficiency">Wirkungsgrad des Wechselrichters (%): <i class="info-icon" data-toggle="tooltip" title="Der Wirkungsgrad des Wechselrichters in Prozent. Typische Werte liegen zwischen 95% und 98%. Beispiel: 96%.">i</i></label>
-                        <input type="number" class="form-control" id="inverterEfficiency" name="inverterEfficiency" step="0.01" value="96" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="irradiance">Globalstrahlung auf geneigte Fläche (kWh/m²): <i class="info-icon" data-toggle="tooltip" title="Die durchschnittliche tägliche Sonneneinstrahlung auf die Module in kWh/m². Typische Werte liegen zwischen 3 und 5 kWh/m². Beispiel: 4 kWh/m².">i</i></label>
-                        <input type="number" class="form-control" id="irradiance" name="irradiance" value="4" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pr">Performance Ratio: <i class="info-icon" data-toggle="tooltip" title="Das Performance Ratio (PR) berücksichtigt Systemverluste und liegt typischerweise zwischen 0.75 und 0.85. Beispiel: 0.8.">i</i></label>
-                        <input type="number" class="form-control" id="pr" name="pr" step="0.01" value="0.8" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="temperatureCoefficient">Temperaturkoeffizient (%/°C): <i class="info-icon" data-toggle="tooltip" title="Der Temperaturkoeffizient gibt an, wie stark der Wirkungsgrad der Module mit steigender Temperatur abnimmt. Typische Werte liegen zwischen -0.3% und -0.5% pro Grad Celsius. Beispiel: -0.4%.">i</i></label>
-                        <input type="number" class="form-control" id="temperatureCoefficient" name="temperatureCoefficient" step="0.01" value="-0.4" required>
-                    </div>
-                    <!--Neigungswinkel der Anlage-->
-                    <div class="form-group">
-                        <label for="roofTilt">Neigung des Dachs (°): <i class="info-icon" data-toggle="tooltip" title="Der Neigungswinkel der Solarmodule. Beispiel: 30° für ein typisches Dach.">i</i></label>
-                        <select class="form-control" id="roofTilt" name="roofTilt" required>
-                            <option value="0">Flachdach (0°)</option>
-                            <option value="15">Leichte Neigung (15°)</option>
-                            <option value="30">Normales Dach (30°)</option>
-                            <option value="45">Steildach (45°)</option>
-                        </select>
-                    </div>
-                    <!--Ausrichtung der Anlage-->
-                    <div class="form-group">
-                        <label for="orientation">Ausrichtung der Module (°): <i class="info-icon" data-toggle="tooltip" title="Die Ausrichtung der Solarmodule in Grad. Süden entspricht 180°. Beispiel: 180° für optimale Ausrichtung.">i</i></label>
-                        <select class="form-control" id="orientation" name="orientation" required>
-                            <option value="0">Norden (0°)</option>
-                            <option value="90">Osten (90°)</option>
-                            <option value="180">Süden (180°)</option>
-                            <option value="270">Westen (270°)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="shading">Verschattungsfaktor (%): <i class="info-icon" data-toggle="tooltip" title="Der Anteil der Zeit, in der die Module verschattet sind, in Prozent. Beispiel: 10% für teilweise Verschattung.">i</i></label>
-                        <input type="number" class="form-control" id="shading" name="shading" step="0.01" value="10" required>
+
+                    <hr>
+
+                    <!-- Unit 4: Rest -->
+                    <div class="form-unit">
+                        
+                        <div class="form-group">
+                            <label for="roofTilt">Neigung des Dachs (°): <i class="info-icon" data-toggle="tooltip" title="Der Neigungswinkel der Solarmodule. Beispiel: 30° für ein typisches Dach.">i</i></label>
+                            <select class="form-control" id="roofTilt" name="roofTilt" required>
+                                <option value="0">Flachdach (0°)</option>
+                                <option value="15">Leichte Neigung (15°)</option>
+                                <option value="30">Normales Dach (30°)</option>
+                                <option value="45">Steildach (45°)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="orientation">Ausrichtung der Module (°): <i class="info-icon" data-toggle="tooltip" title="Die Ausrichtung der Solarmodule in Grad. Süden entspricht 180°. Beispiel: 180° für optimale Ausrichtung.">i</i></label>
+                            <select class="form-control" id="orientation" name="orientation" required>
+                                <option value="0">Norden (0°)</option>
+                                <option value="90">Osten (90°)</option>
+                                <option value="180">Süden (180°)</option>
+                                <option value="270">Westen (270°)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="shading">Verschattungsfaktor (%): <i class="info-icon" data-toggle="tooltip" title="Der Anteil der Zeit, in der die Module verschattet sind, in Prozent. Beispiel: 10% für teilweise Verschattung.">i</i></label>
+                            <input type="number" class="form-control" id="shading" name="shading" step="0.01" value="10" required>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Berechnen</button>
                     <button type="submit" id="pageOne1" class="btn btn-primary">Weiter</button>
