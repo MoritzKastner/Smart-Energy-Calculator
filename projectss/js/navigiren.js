@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //Verlinkung zur Dashboard Page nach Abschließen des Anmeldevorgangs
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("pageFour4").addEventListener("click", function() {
-        window.location.href = "/projectss/html/Dashboard.html"; 
-    });
-});
+//document.addEventListener("DOMContentLoaded", function() {
+  //  document.getElementById("pageFour4").addEventListener("click", function() {
+    //    window.location.href = "/projectss/html/Dashboard.html";
+    //});
+//});
