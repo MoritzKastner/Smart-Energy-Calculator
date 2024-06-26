@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function navigateForm(forward, id) {
-        const pages = ['pageOne', 'pageThree', 'pageFour'];
+        const pages = ['pageOne', 'pageThree', 'pageFour', 'pageFive'];
         let currentPageIndex = pages.findIndex(page => document.getElementById(page).style.display !== 'none');
 
         if (forward) {
@@ -35,11 +35,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('pageOne').style.display = 'block';
     document.getElementById('pageThree').style.display = 'none';
     document.getElementById('pageFour').style.display = 'none';
+    document.getElementById('pageFive').style.display = 'none';
 });
-
-//Verlinkung zur Dashboard Page nach Abschließen des Anmeldevorgangs
-//document.addEventListener("DOMContentLoaded", function() {
-  //  document.getElementById("pageFour4").addEventListener("click", function() {
-    //    window.location.href = "/projectss/html/Dashboard.html";
-    //});
-//});
