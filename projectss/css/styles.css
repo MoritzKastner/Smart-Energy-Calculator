@@ -100,11 +100,40 @@ label {
     padding-top: 50px;
 }
 
-.content-box {
+.content-box1 {
     background-color: white;
     width: 700px;
     height: 450px; 
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     padding: 20px; 
+}
+.content-box2 {
+    background-color: white;
+    width: 700px;
+    height: 450px; 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+}
+
+/* Optische Anpassung der Empfehlungsliste*/
+#recommendations {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#recommendations li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+}
+
+#recommendations li img {
+    margin-left: 10px;
 }

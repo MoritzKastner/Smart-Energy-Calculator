@@ -1,26 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Daten der PV-Anlage: Array von Objekten mit Stunden und Ertragszahlen in kWh
-    const pvData = [
-        { hour: 8, production: 0.4 },
-        { hour: 9, production: 0.4 },
-        { hour: 10, production: 0.4 },
-        { hour: 11, production: 0.6 },
-        { hour: 12, production: 1.2 },
-        { hour: 13, production: 1.5 },
-        { hour: 14, production: 1.5 },
-        { hour: 15, production: 0.8 },
-        { hour: 16, production: 1.5 },
-        { hour: 17, production: 0.8 },
-        { hour: 18, production: 0.8 },
-        { hour: 19, production: 0.2 }
-    ];
+    const pvDataString = localStorage.getItem('pvData');
+    if (!pvDataString) {
+        console.error('Kein gespeicherter PV-Daten im lokalen Speicher gefunden');
+        return;
+    }
+    const pvData = JSON.parse(pvDataString);
 
     // Haushaltsgeräte: Array von Objekten mit Gerätenamen und Verbrauch in kWh
     const devices = [
-        { name: 'Waschmaschine', consumption: 0.6 },
-        { name: 'Trockner', consumption: 1 },
-        { name: 'Geschirrspüler', consumption: 0.7 },
-        { name: 'Klimaanlage', consumption: 0.3 },
+        { name: 'Waschmaschine', consumption: 0.6, icon: 'waschmaschine.png' },
+        { name: 'Trockner', consumption: 1, icon: 'trockner.png' },
+        { name: 'Geschirrspüler', consumption: 0.7, icon: 'geschirrspüler.png' },
+        { name: 'Klimaanlage', consumption: 0.3, icon: 'klimaanlage.png' },
+        { name: 'Klimaanlage', consumption: 0.3, icon: 'klimaanlage.png' },
     ];
 
     // Funktion zum Finden des besten Gerätes für eine bestimmte Stunde
@@ -37,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const difference = Math.abs(adjustedProduction - device.consumption);
                     if (difference < minDifference) {
                         minDifference = difference;
-                        bestMatch = device.name;
+                        bestMatch = device;
                     }
                 }
             });
@@ -52,15 +45,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const usedDevices = new Set(); // Set zum Verfolgen der bereits empfohlenen Geräte
 
     for (let i = 0; i < pvData.length - 1; i += 3) {
+        // Überspringe Stunden außerhalb des Bereichs von 8:00 bis 20:00 Uhr
+        if (pvData[i].hour < 8 || pvData[i].hour >= 20) {
+            continue;
+        }
+
         const bestDevice = findBestDeviceForHours(i, devices, usedDevices);
         if (bestDevice) {
             // Füge das empfohlene Gerät für 3 Stunden zum Set hinzu
             for (let j = i; j < i + 3 && j < pvData.length - 1; j++) {
-                usedDevices.add(bestDevice);
+                usedDevices.add(bestDevice.name);
             }
-            const recommendationText = `Nutzen Sie Ihr ${bestDevice} von ${pvData[i].hour} bis ${pvData[i + 2].hour} Uhr.`;
+            const recommendationText = `Nutzen Sie <b>${bestDevice.name}</b> von <b>${pvData[i].hour}:00</b> bis <b>${pvData[i + 2].hour}:00</b> Uhr.`;
             const recommendationItem = document.createElement('li');
-            recommendationItem.textContent = recommendationText;
+            recommendationItem.innerHTML = recommendationText;
+
+            // Icon hinzufügen
+            const icon = document.createElement('img');
+            icon.src = `/projectss/img/${bestDevice.icon}`;
+            icon.alt = bestDevice.name;
+            icon.style.width = '30px'; // Größe des Icons
+            icon.style.height = '30px'; // Größe des Icons
+            icon.style.float = 'right'; // Rechtsbündig
+
+            recommendationItem.appendChild(icon);
             recommendationsList.appendChild(recommendationItem);
         }
     }

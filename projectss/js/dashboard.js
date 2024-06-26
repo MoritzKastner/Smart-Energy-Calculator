@@ -29,6 +29,10 @@ function displayPVErtragChart() {
     const sum = data.reduce((a, b) => a + b, 0);
     const scaledData = data.map(value => (value / sum) * energyProduction);
 
+    // Speichern der berechneten Daten in localStorage
+    const pvData = scaledData.map((production, hour) => ({ hour, production }));
+    localStorage.setItem('pvData', JSON.stringify(pvData));
+
     // Chart.js Diagramm erstellen
     const ctx = document.getElementById('pvErtragChart').getContext('2d');
     new Chart(ctx, {
@@ -38,8 +42,8 @@ function displayPVErtragChart() {
             datasets: [{
                 label: 'Erzeugte Energie (kWh)',
                 data: scaledData,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: '#144C68',
+                borderColor: '#144C68',
                 borderWidth: 1
             }]
         },
