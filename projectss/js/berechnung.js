@@ -26,7 +26,7 @@ async function calculateEnergy() {
         const weatherData = await fetchWeatherData(coords.lat, coords.lon);
         const temperatur = weatherData.temperature;
         const wolkenbedeckung = weatherData.cloudCover;
-        const sonnenstunden = (1 - wolkenbedeckung / 100) * 24;
+        const sonnenstunden = (1 - wolkenbedeckung / 100);
 
         const energyProduction = berechnePVProduktion(moduleArea, efficiency, irradiance, performanceRatio, inverterEfficiency, sonnenstunden, temperatur, temperatureCoefficient, roofTilt, orientation, shading);
         document.getElementById('result').innerText = `Erwartete Energieproduktion: ${energyProduction.toFixed(2)} kWh`;
