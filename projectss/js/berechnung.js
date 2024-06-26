@@ -1,5 +1,5 @@
-const openWeatherApiKey = 'b3719158a95e3489bb955088d3b4f1c2';  // OpenWeatherMap API key
-const openCageApiKey = '7c9dba8263394ae3a25ec91d39a03076';  // OpenCage API key
+const openWeatherApiKey = '2433053c7c621f31147922f3cf2095ac';  // OpenWeatherMap API key
+const openCageApiKey = '61d07fa509784e58a2f277995360dd73';  // OpenCage API key
 
 document.getElementById('pageOne').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -22,13 +22,20 @@ async function calculateEnergy() {
     const shading = parseFloat(document.getElementById('shading').value) / 100;
 
     try {
+        // Local Storage leeren
+        localStorage.removeItem('energyProduction');
+
         const coords = await getCoordinatesFromAddress(country, city, postcode);
         const weatherData = await fetchWeatherData(coords.lat, coords.lon);
         const temperatur = weatherData.temperature;
         const wolkenbedeckung = weatherData.cloudCover;
-        const sonnenstunden = (1 - wolkenbedeckung / 100) * 24;
+        const sonnenstunden = (1 - wolkenbedeckung / 100);
 
         const energyProduction = berechnePVProduktion(moduleArea, efficiency, irradiance, performanceRatio, inverterEfficiency, sonnenstunden, temperatur, temperatureCoefficient, roofTilt, orientation, shading);
+
+        // Berechnetes Ergebnis im Local Storage speichern
+        localStorage.setItem('energyProduction', JSON.stringify(energyProduction));
+
         document.getElementById('result').innerText = `Erwartete Energieproduktion: ${energyProduction.toFixed(2)} kWh`;
     } catch (error) {
         console.error('Fehler:', error);

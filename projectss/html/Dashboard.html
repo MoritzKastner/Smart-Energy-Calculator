@@ -7,36 +7,31 @@
     <link rel="stylesheet" href="/projectss/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    
 </head>
 <body>
-    <header class="header">
-        <div class="left-icons">
-            <div class="logo">
-                <img src="/projectss/img/logo-icon.png" alt="Logo">
-            </div>
+<header class="header">
+    <div class="left-icons">
+        <div class="logo">
+            <img src="/projectss/img/logo-icon.png" alt="Logo">
         </div>
-        <div class="right-icons">  
-            <div class="icon">
-                <i class="bi bi-gear"></i> <!-- Einstellungen Icon -->
-            </div>
-            <div class="icon">
-                <i class="bi bi-person"></i> <!-- Profil Icon -->
-            </div>
+    </div>
+    <div class="right-icons">
+        <div class="icon">
+            <i class="bi bi-gear"></i> <!-- Einstellungen Icon -->
         </div>
-    </header>
-    <div class="container-hintergrunde" id="pageOne" style="background-image: url('/projectss/img/hintergrund.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 900px; overflow: auto;">
-        <div class="dashboard-content">
-
+        <div class="icon">
+            <i class="bi bi-person"></i> <!-- Profil Icon -->
+        </div>
+    </div>
+</header>
+<div class="container-hintergrunde" id="pageOne" style="background-image: url('/projectss/img/hintergrund.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 900px; overflow: auto;">
+    <div class="dashboard-content">
         <div class="content-box">
-           
-            <h2>PV- Ertrag</h2>
-            <p>Hier wird die Stromerzeugung durch Ihre PV- Anlage über den Tag dargestellt.</p>
-            <canvas id="pvErtragChart"></canvas>
+            <h2>PV-Ertrag</h2>
+            <p>Hier wird die Stromerzeugung durch Ihre PV-Anlage über den Tag dargestellt.</p>
+            <canvas id="pvErtragChart" width="400" height="200"></canvas>
         </div>
         <div class="content-box">
-            
             <h2>Empfehlungen</h2>
             <p>Hier bekommen Sie Tipps zur Schaltung Ihrer Haushaltsgeräte.</p>
             <ul id="recommendations">
@@ -44,9 +39,8 @@
                 <!--Nur Platzhalter, hier werden die Handlungsempfehlungen eingefügt-->
             </ul>
         </div>
-
     </div>
-    </div>
-    <script src="/projectss/js/dashboard.js"></script>
+</div>
+<script src="/projectss/js/dashboard.js"></script>
 </body>
 </html>
