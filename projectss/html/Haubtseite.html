@@ -189,11 +189,14 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h1>Um optimale Empfehlungen zu geben benötigen wir als Letztes noch Informationen über Ihren Haushalt</h1>
+                <hr>
                 <form id="pageFourForm">
                     <div class="form-group">
                         <label for="grundverbrauch">Täglicher Grundstromverbrauch</label>
                         <input type="number" class="form-control" id="grundverbrauch" placeholder="kWh">
                     </div>
+                    <hr>
+                    <div class="form-unit">
                     <div class="form-group checkbox-panel">
                         <label>Welche Elektrogeräte können Sie zeitsteuern? (optional)</label>
                         <div class="checkbox-group d-flex flex-wrap justify-content-start">
@@ -223,6 +226,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <hr>
+
+                <div class="form-unit">
 
                     <div class="form-group">
                         <label>Besitzen Sie eine Klimaanlage?</label>
@@ -232,6 +239,9 @@
                             <input type="radio" id="klimaNein" name="klimaanlage" value="Nein">
                             <label for="klimaNein">Nein</label>
                         </div>
+                         </div>
+                        </div>
+                        <div class="form-unit">
                         <label>Besitzen Sie ein Elektroauto?</label>
                         <div>
                             <input type="radio" id="autoJa" name="elektroauto" value="Ja">
@@ -239,6 +249,9 @@
                             <input type="radio" id="autoNein" name="elektroauto" value="Nein">
                             <label for="autoNein">Nein</label>
                         </div>
+                         </div>
+                         <hr>
+
                         <div class="text-center">
                             <button type="submit" id="pageFour4" class="btn btn-primary" onclick="fetchWeatherData()">Abschließen</button>
                             <button type="button" id="backPageThree" class="btn btn-secondary">Zurück</button>
